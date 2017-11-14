@@ -1,6 +1,8 @@
-package com.grantslape.tsasim;
+package tsa_sim;
 
-private class Person {
+import java.util.Date;
+
+class Person {
     private Date createdAt;
 
     public Person(Date createdAt) {
