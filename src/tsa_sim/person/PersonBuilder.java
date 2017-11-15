@@ -23,8 +23,8 @@ public class PersonBuilder {
         firstNames = new ArrayList<>();
         lastNames = new ArrayList<>();
 
-        File firstNameFile = new File("../../first_names.txt");
-        File lastNameFile = new File("../../last_names.txt");
+        File firstNameFile = new File("first_names.txt");
+        File lastNameFile = new File("last_names.txt");
 
         Scanner input = new Scanner(firstNameFile);
         while(input.hasNextLine()) {
@@ -41,7 +41,7 @@ public class PersonBuilder {
         return new Person(
                 generator.nextInt(idLimit),
                 new Date(),
-                firstNames.get(generator.nextInt(firstNames.size()))
+                firstNames.get(generator.nextInt(firstNames.size())),
                 lastNames.get(generator.nextInt(lastNames.size())));
     }
 

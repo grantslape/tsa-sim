@@ -1,7 +1,5 @@
 package tsa_sim.person;
 
-import jdk.internal.jline.internal.Nullable;
-
 import java.util.Date;
 
 public class Person {
@@ -11,10 +9,8 @@ public class Person {
     //This is also when they enter the first queue
     private final Date createdAt;
     //Second Queue entered
-    @Nullable
     private Date finalQueuedAt = null;
     //Queueing complete
-    @Nullable
     private Date completedAt = null;
 
     public Person(int id, Date createdAt, String firstName, String lastName) {

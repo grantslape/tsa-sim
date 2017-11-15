@@ -1,11 +1,14 @@
 package tsa_sim;
 
 import tsa_sim.person.*;
+
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class TSASimulator {
-    private final int PASSENGER_COUNT = 50;
+    private static final int PASSENGER_COUNT = 50;
+    private PersonBuilder personBuilder;
     //Length of a tick in seconds, default to 1 second.
     private int tickValue = 1;
 
@@ -20,11 +23,41 @@ public class TSASimulator {
     private PersonQueue queueB;
     private PersonQueue queueC;
 
+    public TSASimulator(int passengerCount) {
+        //TODO: set up the objects
+        try {
+            personBuilder = new PersonBuilder(passengerCount);
+        } catch (FileNotFoundException e) {
+            //TODO: log
+            e.printStackTrace();
+        }
+        queueA = new PersonQueue();
+        queueB = new PersonQueue();
+        queueC = new PersonQueue();
+        checkerA = new Checker(queueA);
+        checkerB = new Checker(queueB);
+        checkerC = new Checker(queueC);
+
+        completedPool = new ArrayList<>();
+        passengerPool = new ArrayBlockingQueue<>(passengerCount);
+        for(int i = 0; i < passengerCount; i++) {
+            passengerPool.add(personBuilder.buildPerson());
+        }
+    }
 
     public static void main(String[] args) {
-        //TODO: set up the objects
         //IF arg.length > 0 then switch on tick value.
+        TSASimulator simulator = new TSASimulator(PASSENGER_COUNT);
+
         //TODO: run the simulation
         System.out.println("*** TSA SIMULATOR ***");
+        for(Person person : simulator.passengerPool) {
+            System.out.printf(
+                    "Id: %d, Name: %s, createdAt: %td",
+                    person.getId(),
+                    person.getFullName(),
+                    person.getCreatedAt());
+            System.out.print('\n');
+        }
     }
 }
