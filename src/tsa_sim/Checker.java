@@ -16,10 +16,10 @@ class Checker {
         }
     }
 
-    //might not need this, could just do it in the queue processing.
+    //TODO: might not need this, could just do it in the queue processing.
     private class checkQueueLength implements Runnable {
         public void run() {
-            //TODO: Check the queue's length and adjust processing time if it is increasing
+            //Check the queue's length and adjust processing time if it is increasing
         }
     }
 

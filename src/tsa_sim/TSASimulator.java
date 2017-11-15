@@ -1,12 +1,13 @@
 package tsa_sim;
 
+import tsa_sim.person.*;
 import java.util.ArrayList;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class TSASimulator {
     private final int PASSENGER_COUNT = 50;
-    //Length of a tick in seconds.
-    private int tickValue;
+    //Length of a tick in seconds, default to 1 second.
+    private int tickValue = 1;
 
     private Checker checkerA;
     private Checker checkerB;

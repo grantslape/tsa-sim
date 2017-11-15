@@ -1,11 +1,13 @@
-package tsa_sim;
+package tsa_sim.person;
 
 import jdk.internal.jline.internal.Nullable;
 
 import java.util.Date;
 
-class Person {
+public class Person {
     private final int id;
+    private final String firstName;
+    private final String lastName;
     //This is also when they enter the first queue
     private final Date createdAt;
     //Second Queue entered
@@ -15,14 +17,11 @@ class Person {
     @Nullable
     private Date completedAt = null;
 
-    public Person(int id, Date createdAt) {
+    public Person(int id, Date createdAt, String firstName, String lastName) {
         this.createdAt = createdAt;
         this.id = id;
-    }
-
-    public Person() {
-        this.createdAt = new Date();
-        this.id = 0;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     /*
@@ -34,6 +33,10 @@ class Person {
 
     public int getId() {
         return id;
+    }
+
+    public String getFullName() {
+        return firstName + lastName;
     }
 
     public Date getCompletedAt() {
