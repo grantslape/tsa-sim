@@ -11,11 +11,9 @@ public class PersonBuilder {
 
     private ArrayList<String> firstNames;
     private ArrayList<String> lastNames;
-    private final int idLimit;
 
-    public PersonBuilder(int idLimit) throws FileNotFoundException {
+    public PersonBuilder() throws FileNotFoundException {
         this.seedLists();
-        this.idLimit = idLimit;
     }
 
     private void seedLists() throws FileNotFoundException {
@@ -36,10 +34,10 @@ public class PersonBuilder {
         }
     }
 
-    public Person buildPerson() {
+    public Person buildPerson(int id) {
         Random generator = new Random();
         return new Person(
-                generator.nextInt(idLimit),
+                id,
                 new Date(),
                 firstNames.get(generator.nextInt(firstNames.size())),
                 lastNames.get(generator.nextInt(lastNames.size())));

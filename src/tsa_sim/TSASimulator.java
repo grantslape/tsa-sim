@@ -26,7 +26,7 @@ public class TSASimulator {
     public TSASimulator(int passengerCount) {
         //TODO: set up the objects
         try {
-            personBuilder = new PersonBuilder(passengerCount);
+            personBuilder = new PersonBuilder();
         } catch (FileNotFoundException e) {
             //TODO: log
             e.printStackTrace();
@@ -41,7 +41,7 @@ public class TSASimulator {
         completedPool = new ArrayList<>();
         passengerPool = new ArrayBlockingQueue<>(passengerCount);
         for(int i = 0; i < passengerCount; i++) {
-            passengerPool.add(personBuilder.buildPerson());
+            passengerPool.add(personBuilder.buildPerson(i+1));
         }
     }
 
@@ -53,10 +53,10 @@ public class TSASimulator {
         System.out.println("*** TSA SIMULATOR ***");
         for(Person person : simulator.passengerPool) {
             System.out.printf(
-                    "Id: %d, Name: %s, createdAt: %td",
+                    "Id: %d, Name: %s, createdAt: %s",
                     person.getId(),
                     person.getFullName(),
-                    person.getCreatedAt());
+                    person.getCreatedAt().toString());
             System.out.print('\n');
         }
     }
