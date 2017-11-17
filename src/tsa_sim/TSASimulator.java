@@ -1,9 +1,9 @@
 package tsa_sim;
 
 import tsa_sim.person.*;
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class TSASimulator {
@@ -15,49 +15,65 @@ public class TSASimulator {
     private Checker checkerA;
     private Checker checkerB;
     private Checker checkerC;
+    private Checker initialChecker;
     //TODO: Maybe this should be a priority queue and we assign a pop time at creation?
-    private ArrayBlockingQueue<Person> passengerPool;
-    //We don't need a synchronized data structure for the end, because there is only one entry point.
-    private ArrayList<Person> completedPool;
-    private PersonQueue queueA;
-    private PersonQueue queueB;
-    private PersonQueue queueC;
+    private PersonQueue<Person> passengerPool;
+    private PersonQueue<Person> completedPool;
+    private PersonQueue<Person> queueA;
+    private PersonQueue<Person> queueB;
+    private PersonQueue<Person> queueC;
 
     public TSASimulator(int passengerCount) {
-        //TODO: set up the objects
         try {
             personBuilder = new PersonBuilder();
         } catch (FileNotFoundException e) {
             //TODO: log
             e.printStackTrace();
         }
-        queueA = new PersonQueue();
-        queueB = new PersonQueue();
-        queueC = new PersonQueue();
-        checkerA = new Checker(queueA);
-        checkerB = new Checker(queueB);
-        checkerC = new Checker(queueC);
+        queueA = new PersonQueue<>();
+        queueB = new PersonQueue<>();
+        queueC = new PersonQueue<>();
+        completedPool = new PersonQueue<>();
+        passengerPool = new PersonQueue<>();
+        initialChecker = new Checker(passengerPool, new PersonQueue[] {queueA, queueB}, tickValue, "Initial Checker" );
+        checkerA = new Checker(queueA, new PersonQueue[] {queueC}, tickValue, "Checker A");
+        checkerB = new Checker(queueB, new PersonQueue[] {queueC}, tickValue, "Checker B");
+        checkerC = new Checker(queueC, new PersonQueue[] {completedPool}, tickValue, "Checker C");
 
-        completedPool = new ArrayList<>();
-        passengerPool = new ArrayBlockingQueue<>(passengerCount);
         for(int i = 0; i < passengerCount; i++) {
             passengerPool.add(personBuilder.buildPerson(i+1));
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //IF arg.length > 0 then switch on tick value.
         TSASimulator simulator = new TSASimulator(PASSENGER_COUNT);
+        Random generator = new Random();
 
         //TODO: run the simulation
         System.out.println("*** TSA SIMULATOR ***");
-        for(Person person : simulator.passengerPool) {
-            System.out.printf(
-                    "Id: %d, Name: %s, createdAt: %s",
+        for(Object obj : simulator.passengerPool) {
+            Person person = (Person) obj;
+            System.out.format(
+                    "Id: %d, Name: %s, createdAt: %s%n",
                     person.getId(),
                     person.getFullName(),
                     person.getCreatedAt().toString());
-            System.out.print('\n');
         }
+
+        Thread a = new Thread(simulator.checkerA);
+        Thread b = new Thread(simulator.checkerB);
+        Thread c = new Thread(simulator.checkerC);
+        Thread d = new Thread(simulator.initialChecker);
+        d.start();
+        a.start();
+        b.start();
+        c.start();
+
+        //TODO: Process the inoput
+
+//        a.join();
+//        b.join();
+//        c.join();
     }
 }
