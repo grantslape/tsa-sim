@@ -61,7 +61,7 @@ class Checker implements Runnable {
                 person.getCreatedAt().toString(),
                 person.getQueuedAt() == null ? null : person.getQueuedAt().toString(),
                 person.getFinalQueuedAt() == null ? null : person.getFinalQueuedAt().toString(),
-                person.getCompletedAt() == null ? null : person.getFinalQueuedAt().toString());
+                person.getCompletedAt() == null ? null : person.getCompletedAt().toString());
         //TODO: use threaded random generator.
         if (destination.length > 1) {
             destination[generator.nextInt(destination.length)].add(person);
