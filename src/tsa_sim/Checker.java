@@ -4,6 +4,7 @@ import tsa_sim.person.Person;
 
 import java.util.Date;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 class Checker implements Runnable {
     private final PersonQueue queue;
@@ -13,8 +14,6 @@ class Checker implements Runnable {
     private int previousLength;
     private int tick;
     private String name;
-    //TODO: use threaded random generator.
-    private Random generator;
 
     public Checker(PersonQueue q, PersonQueue[] destination, int tick, String name) {
         this.queue = q;
@@ -24,7 +23,6 @@ class Checker implements Runnable {
         previousLength = 0;
         //tick is is seconds on front-end, milliseconds on backend
         this.tick = 1000 * tick;
-        this.generator = new Random();
     }
 
     public void run() {
@@ -34,7 +32,7 @@ class Checker implements Runnable {
                 if (queue.isEmpty()) {
                     Thread.sleep(tick);
                 } else {
-                    Thread.sleep(tick * generator.nextInt(15)+1-timeModifier);
+                    Thread.sleep(tick * ThreadLocalRandom.current().nextInt(15)+1-timeModifier);
                     process(queue.take());
                 }
             } catch (InterruptedException e) {
@@ -62,9 +60,8 @@ class Checker implements Runnable {
                 person.getQueuedAt() == null ? null : person.getQueuedAt().toString(),
                 person.getFinalQueuedAt() == null ? null : person.getFinalQueuedAt().toString(),
                 person.getCompletedAt() == null ? null : person.getCompletedAt().toString());
-        //TODO: use threaded random generator.
         if (destination.length > 1) {
-            destination[generator.nextInt(destination.length)].add(person);
+            destination[ThreadLocalRandom.current().nextInt(destination.length)].add(person);
         } else {
             destination[0].add(person);
         }
