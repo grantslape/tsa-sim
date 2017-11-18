@@ -6,14 +6,15 @@ import java.util.Date;
 import java.util.Random;
 
 class Checker implements Runnable {
-    protected final PersonQueue queue;
-    protected final PersonQueue[] destination;
+    private final PersonQueue queue;
+    private final PersonQueue[] destination;
     //How many ticks should the queue be expedited by.
-    protected int timeModifier;
-    protected int previousLength;
-    protected int tick;
-    protected String name;
-    protected Random generator;
+    private int timeModifier;
+    private int previousLength;
+    private int tick;
+    private String name;
+    //TODO: use threaded random generator.
+    private Random generator;
 
     public Checker(PersonQueue q, PersonQueue[] destination, int tick, String name) {
         this.queue = q;
@@ -26,15 +27,6 @@ class Checker implements Runnable {
         this.generator = new Random();
     }
 
-//    public Checker() {
-//        this.queue = null;
-//        this.destination = null;
-//        timeModifier = 0;
-//        previousLength = 0;
-//        this.tick = 0;
-//        this.name = "default name";
-//    }
-
     public void run() {
         Thread.currentThread().setName(name);
         while (true) {
@@ -43,7 +35,7 @@ class Checker implements Runnable {
                     Thread.sleep(tick);
                 } else {
                     Thread.sleep(tick * generator.nextInt(15)+1-timeModifier);
-                    process((Person) queue.take());
+                    process(queue.take());
                 }
             } catch (InterruptedException e) {
                 threadMessage("Done");
@@ -52,20 +44,25 @@ class Checker implements Runnable {
     }
 
     private void process(Person person) {
-        String threadName =
-                Thread.currentThread().getName();
-        System.out.format(
-                "Checker: %s Id: %d, Name: %s, createdAt: %s%n",
-                threadName,
-                person.getId(),
-                person.getFullName(),
-                person.getCreatedAt().toString());
-        //TODO: fix this when adding another queueing timestamp
-        if (person.getFinalQueuedAt() == null) {
+        String threadName = Thread.currentThread().getName();
+        //Set the earliest null timestamp
+        if (person.getQueuedAt() == null) {
+            person.setQueuedAt(new Date());
+        } else if (person.getFinalQueuedAt() == null) {
             person.setFinalQueuedAt(new Date());
         } else {
             person.setCompletedAt(new Date());
         }
+        System.out.format(
+                "Checker: %s processed: Id: %d, Name: %s, createdAt: %s, queuedAt: %s, finalQueuedAt: %s, completedAt: %s%n",
+                threadName,
+                person.getId(),
+                person.getFullName(),
+                person.getCreatedAt().toString(),
+                person.getQueuedAt() == null ? null : person.getQueuedAt().toString(),
+                person.getFinalQueuedAt() == null ? null : person.getFinalQueuedAt().toString(),
+                person.getCompletedAt() == null ? null : person.getFinalQueuedAt().toString());
+        //TODO: use threaded random generator.
         if (destination.length > 1) {
             destination[generator.nextInt(destination.length)].add(person);
         } else {
@@ -75,15 +72,12 @@ class Checker implements Runnable {
 
     // Display a message, preceded by
     // the name of the current thread
+    //TODO: Do we need this?
     static void threadMessage(String message) {
         String threadName =
                 Thread.currentThread().getName();
         System.out.format("%s: %s%n",
                 threadName,
                 message);
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

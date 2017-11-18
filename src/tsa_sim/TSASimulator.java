@@ -17,11 +17,11 @@ public class TSASimulator {
     private Checker checkerC;
     private Checker initialChecker;
     //TODO: Maybe this should be a priority queue and we assign a pop time at creation?
-    private PersonQueue<Person> passengerPool;
-    private PersonQueue<Person> completedPool;
-    private PersonQueue<Person> queueA;
-    private PersonQueue<Person> queueB;
-    private PersonQueue<Person> queueC;
+    private PersonQueue passengerPool;
+    private PersonQueue completedPool;
+    private PersonQueue queueA;
+    private PersonQueue queueB;
+    private PersonQueue queueC;
 
     public TSASimulator(int passengerCount) {
         try {
@@ -30,12 +30,12 @@ public class TSASimulator {
             //TODO: log
             e.printStackTrace();
         }
-        queueA = new PersonQueue<>();
-        queueB = new PersonQueue<>();
-        queueC = new PersonQueue<>();
-        completedPool = new PersonQueue<>();
-        passengerPool = new PersonQueue<>();
-        initialChecker = new Checker(passengerPool, new PersonQueue[] {queueA, queueB}, tickValue, "Initial Checker" );
+        queueA = new PersonQueue();
+        queueB = new PersonQueue();
+        queueC = new PersonQueue();
+        completedPool = new PersonQueue();
+        passengerPool = new PersonQueue();
+        initialChecker = new Checker(passengerPool, new PersonQueue[] {queueA, queueB}, tickValue, "Checker I");
         checkerA = new Checker(queueA, new PersonQueue[] {queueC}, tickValue, "Checker A");
         checkerB = new Checker(queueB, new PersonQueue[] {queueC}, tickValue, "Checker B");
         checkerC = new Checker(queueC, new PersonQueue[] {completedPool}, tickValue, "Checker C");
