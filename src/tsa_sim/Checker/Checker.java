@@ -1,12 +1,10 @@
-package tsa_sim;
+package tsa_sim.Checker;
 
-import tsa_sim.person.Person;
-
+import tsa_sim.person.*;
 import java.util.Date;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-class Checker implements Runnable {
+public class Checker implements CheckerInterface {
     private final PersonQueue queue;
     private final PersonQueue[] destination;
     //How many ticks should the queue be expedited by.
@@ -41,7 +39,7 @@ class Checker implements Runnable {
         }
     }
 
-    private void process(Person person) {
+    public void process(Person person) {
         String threadName = Thread.currentThread().getName();
         //Set the earliest null timestamp
         if (person.getQueuedAt() == null) {
@@ -70,7 +68,7 @@ class Checker implements Runnable {
     // Display a message, preceded by
     // the name of the current thread
     //TODO: Do we need this?
-    static void threadMessage(String message) {
+    static private void threadMessage(String message) {
         String threadName =
                 Thread.currentThread().getName();
         System.out.format("%s: %s%n",

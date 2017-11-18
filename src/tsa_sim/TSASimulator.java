@@ -1,10 +1,9 @@
 package tsa_sim;
 
 import tsa_sim.person.*;
+import tsa_sim.Checker.*;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.ArrayBlockingQueue;
 
 public class TSASimulator {
     private static final int PASSENGER_COUNT = 50;
@@ -70,7 +69,7 @@ public class TSASimulator {
         b.start();
         c.start();
 
-        //TODO: Process the inoput
+        //TODO: Process the input
 
 //        a.join();
 //        b.join();
