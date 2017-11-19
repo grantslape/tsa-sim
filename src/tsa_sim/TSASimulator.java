@@ -56,9 +56,9 @@ public class TSASimulator {
     public TreeSet<Date> generateTimes(int count, int length) {
         TreeSet<Date> times = new TreeSet<>();
         //5 second buffer for sim to begin
-        long floor = System.currentTimeMillis() + 5000;
+        long floor = System.currentTimeMillis();
         while(times.size() < count) {
-            times.add(generateTime(new Date(floor), new Date(System.currentTimeMillis() + this.tickValue * length * 1000)));
+            times.add(generateTime(new Date(floor), new Date(floor + this.tickValue * length * 1000)));
         }
 
         for(Date time : times) {
@@ -74,11 +74,8 @@ public class TSASimulator {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        //IF arg.length > 0 then switch on tick value.
+        //TODO: IF arg.length > 0 then switch on tick value.
         TSASimulator simulator = new TSASimulator(PASSENGER_COUNT, MAX_INITIAL_TIME);
-        Random generator = new Random();
-
-        //TODO: run the simulation
         System.out.println("*** TSA SIMULATOR ***");
         for(Object obj : simulator.passengerPool) {
             Person person = (Person) obj;

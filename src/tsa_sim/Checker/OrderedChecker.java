@@ -32,7 +32,7 @@ public class OrderedChecker implements CheckerInterface {
     public void run() {
         Thread.currentThread().setName(name);
         while (!popTimes.isEmpty()) {
-            if( System.currentTimeMillis() == popTimes.first().getTime()) {
+            if( System.currentTimeMillis() >= popTimes.first().getTime()) {
                 popTimes.remove(popTimes.first());
                 try {
                     process(queue.take());
