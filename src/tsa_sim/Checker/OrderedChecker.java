@@ -4,7 +4,6 @@ import tsa_sim.person.Person;
 import tsa_sim.person.PersonQueue;
 
 import java.util.Date;
-import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.ThreadLocalRandom;
 
