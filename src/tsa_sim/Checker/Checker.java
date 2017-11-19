@@ -1,7 +1,9 @@
 package tsa_sim.Checker;
 
 import tsa_sim.person.*;
-import java.util.Date;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Math.max;
@@ -14,6 +16,7 @@ public class Checker implements CheckerInterface {
     private int previousLength;
     private int tick;
     private String name;
+    private DateFormat dateFormat;
 
     public Checker(PersonQueue origin, PersonQueue[] destination, int tick, String name) {
         this.queue = origin;
@@ -22,7 +25,8 @@ public class Checker implements CheckerInterface {
         timeModifier = 0;
         previousLength = 0;
         //tick is is seconds on front-end, milliseconds on backend
-        this.tick = 1000 * tick;
+        this.tick = tick;
+        dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     }
 
     public void run() {
@@ -32,7 +36,7 @@ public class Checker implements CheckerInterface {
                 if (queue.isEmpty()) {
                     Thread.sleep(tick);
                 } else {
-                    Thread.sleep(tick * max((ThreadLocalRandom.current().nextInt(15)+ 1 - timeModifier), 1));
+                    Thread.sleep(tick * max((ThreadLocalRandom.current().nextInt(15) + 1 - timeModifier), 1));
                     process(queue.take());
                 }
 
@@ -54,15 +58,15 @@ public class Checker implements CheckerInterface {
     public void process(Person person) {
         //Set the earliest null timestamp
         CheckerInterface.stamp(person);
-        System.out.format(
-                "Checker: %s processed: Id: %d, Name: %s, createdAt: %s, queuedAt: %s, finalQueuedAt: %s, completedAt: %s%n",
+        CheckerInterface.threadMessage(String.format(
+                "%s processed: Id: %d, Name: %s, createdAt: %s, queuedAt: %s, finalQueuedAt: %s, completedAt: %s",
                 Thread.currentThread().getName(),
                 person.getId(),
                 person.getFullName(),
-                person.getCreatedAt().toString(),
-                person.getQueuedAt() == null ? null : person.getQueuedAt().toString(),
-                person.getFinalQueuedAt() == null ? null : person.getFinalQueuedAt().toString(),
-                person.getCompletedAt() == null ? null : person.getCompletedAt().toString());
+                dateFormat.format(person.getCreatedAt()),
+                person.getQueuedAt() == null ? null : dateFormat.format(person.getQueuedAt()),
+                person.getFinalQueuedAt() == null ? null : dateFormat.format(person.getFinalQueuedAt()),
+                person.getCompletedAt() == null ? null : dateFormat.format(person.getCompletedAt())));
         if (destination.length > 1) {
             destination[ThreadLocalRandom.current().nextInt(destination.length)].add(person);
         } else {

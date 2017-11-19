@@ -3,16 +3,19 @@ package tsa_sim;
 import tsa_sim.person.*;
 import tsa_sim.Checker.*;
 import java.io.FileNotFoundException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 import java.util.TreeSet;
+import java.util.concurrent.TimeUnit;
 
 public class TSASimulator {
     private static final int PASSENGER_COUNT = 50;
-    //max ticks for initial checker.
-    private static final int MAX_INITIAL_TIME = 10;
+    //max ticks for initial checker.  This needs to be higher than the passengerCount * tickValue.
+    private static final int MAX_INITIAL_TIME = 100;
     private PersonBuilder personBuilder;
-    //Length of a tick in seconds, default to 1 second.
+    //Length of a tick in milliseconds.
     public static int tickValue;
 
     private Checker checkerA;
@@ -42,7 +45,6 @@ public class TSASimulator {
                 passengerPool,
                 new PersonQueue[] {queueA, queueB},
                 generateTimes(passengerCount, initialTime),
-                tickValue,
                 "Checker I");
         checkerA = new Checker(queueA, new PersonQueue[] {queueC}, tickValue, "Checker A");
         checkerB = new Checker(queueB, new PersonQueue[] {queueC}, tickValue, "Checker B");
@@ -58,11 +60,7 @@ public class TSASimulator {
         //5 second buffer for sim to begin
         long floor = System.currentTimeMillis();
         while(times.size() < count) {
-            times.add(generateTime(new Date(floor), new Date(floor + this.tickValue * length * 1000)));
-        }
-
-        for(Date time : times) {
-            System.out.println(time.toString());
+            times.add(generateTime(new Date(floor), new Date(floor + tickValue * length)));
         }
 
         return times;
@@ -70,28 +68,37 @@ public class TSASimulator {
 
     private static Date generateTime(Date floor, Date ceiling) {
         Random generator = new Random();
-        //TODO: truncate return to precision of tickValue
         return new Date(generator.nextInt((int)(ceiling.getTime() - floor.getTime())) + floor.getTime());
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        //TODO: IF arg.length > 0 then switch on tick value.  Inject this.
-        tickValue = 1;
-        TSASimulator simulator = new TSASimulator(PASSENGER_COUNT, MAX_INITIAL_TIME);
-        System.out.println("*** TSA SIMULATOR ***");
-        for(Object obj : simulator.passengerPool) {
-            Person person = (Person) obj;
+    private void printPassengers() {
+        for(Person person : this.passengerPool) {
             System.out.format(
                     "Id: %d, Name: %s, createdAt: %s%n",
                     person.getId(),
                     person.getFullName(),
                     person.getCreatedAt().toString());
         }
+    }
 
+    private static long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
+        long diffInMillis = date2.getTime() - date1.getTime();
+        return timeUnit.convert(diffInMillis,TimeUnit.MILLISECONDS);
+    }
+
+    public static void main(String[] args) {
+        //TODO: IF arg.length > 0 then switch on tick value.  Inject this.
+        tickValue = 1000;
+        TSASimulator simulator = new TSASimulator(PASSENGER_COUNT, MAX_INITIAL_TIME);
+
+        simulator.printPassengers();
         Thread a = new Thread(simulator.checkerA);
         Thread b = new Thread(simulator.checkerB);
         Thread c = new Thread(simulator.checkerC);
         Thread d = new Thread(simulator.initialChecker);
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
+        Date start = new Date();
         d.start();
         a.start();
         b.start();
@@ -99,9 +106,15 @@ public class TSASimulator {
 
         //Wait for initial checker to end
         while (d.isAlive()) {
-            d.join();
+            try {
+                d.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                //try and recover
+                System.out.println("Restarting: " + d.getName());
+                d.start();
+            }
         }
-
         while ( a.isAlive() || b.isAlive()) {
             if(a.isAlive() && simulator.queueA.isEmpty()) {
                 a.interrupt();
@@ -116,8 +129,12 @@ public class TSASimulator {
             }
         }
 
-        System.out.println("\nExecution completed!");
-        //clean up
-        d.interrupt();
+        Date end = new Date();
+        System.out.println("\n*** TSA SIMULATOR ***");
+        System.out.println("Execution completed!");
+        System.out.println("\nSTART: " + dateFormat.format(start));
+        System.out.println("END: " + dateFormat.format(end));
+        System.out.print("TIME ELAPSED: ");
+        System.out.print(getDateDiff(start, end, TimeUnit.SECONDS));
     }
 }
