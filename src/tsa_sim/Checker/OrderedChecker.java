@@ -1,53 +1,49 @@
 package tsa_sim.Checker;
 
-import tsa_sim.person.*;
+import tsa_sim.person.Person;
+import tsa_sim.person.PersonQueue;
+
 import java.util.Date;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static java.lang.Math.max;
-
-public class Checker implements CheckerInterface {
+public class OrderedChecker implements CheckerInterface {
     private final PersonQueue queue;
     private final PersonQueue[] destination;
-    //How many ticks should the queue be expedited by.
-    private int timeModifier;
-    private int previousLength;
+    private TreeSet<Date> popTimes;
     private int tick;
     private String name;
 
-    public Checker(PersonQueue origin, PersonQueue[] destination, int tick, String name) {
+    public OrderedChecker(PersonQueue origin, PersonQueue[] destination, TreeSet<Date> popTimes, int tick, String name) {
         this.queue = origin;
         this.destination = destination;
         this.name = name;
-        timeModifier = 0;
-        previousLength = 0;
-        //tick is is seconds on front-end, milliseconds on backend
         this.tick = 1000 * tick;
+        this.popTimes = popTimes;
+    }
+    /*
+     * If times aren't in the future, nothing good will happen
+     */
+    public void setProcessTimes(TreeSet<Date> times) {
+        this.popTimes = times;
     }
 
     public void run() {
         Thread.currentThread().setName(name);
-        while (true) {
-            try {
-                if (queue.isEmpty()) {
-                    Thread.sleep(tick);
-                } else {
-                    Thread.sleep(tick * max((ThreadLocalRandom.current().nextInt(15)+ 1 - timeModifier), 1));
+        while (!popTimes.isEmpty()) {
+            if( System.currentTimeMillis() == popTimes.first().getTime()) {
+                popTimes.remove(popTimes.first());
+                try {
                     process(queue.take());
+                } catch (InterruptedException e) {
+                    CheckerInterface.threadMessage("Ending by interrupt");
+                    return;
                 }
-
-                if (previousLength < queue.size()) {
-                    timeModifier++;
-                } else if (previousLength > queue.size()) {
-                    if (timeModifier > 0) {
-                        timeModifier--;
-                    }
-                }
-            } catch (InterruptedException e) {
-                CheckerInterface.threadMessage("Ending execution by interrupt");
-                return;
             }
         }
+
+        CheckerInterface.threadMessage("No more times, ending execution.");
     }
 
     public void process(Person person) {
@@ -67,5 +63,6 @@ public class Checker implements CheckerInterface {
         } else {
             destination[0].add(person);
         }
+
     }
 }
