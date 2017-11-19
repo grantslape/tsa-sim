@@ -13,7 +13,7 @@ public class TSASimulator {
     private static final int MAX_INITIAL_TIME = 10;
     private PersonBuilder personBuilder;
     //Length of a tick in seconds, default to 1 second.
-    private int tickValue = 1;
+    public static int tickValue;
 
     private Checker checkerA;
     private Checker checkerB;
@@ -70,11 +70,13 @@ public class TSASimulator {
 
     private static Date generateTime(Date floor, Date ceiling) {
         Random generator = new Random();
+        //TODO: truncate return to precision of tickValue
         return new Date(generator.nextInt((int)(ceiling.getTime() - floor.getTime())) + floor.getTime());
     }
 
     public static void main(String[] args) throws InterruptedException {
-        //TODO: IF arg.length > 0 then switch on tick value.
+        //TODO: IF arg.length > 0 then switch on tick value.  Inject this.
+        tickValue = 1;
         TSASimulator simulator = new TSASimulator(PASSENGER_COUNT, MAX_INITIAL_TIME);
         System.out.println("*** TSA SIMULATOR ***");
         for(Object obj : simulator.passengerPool) {

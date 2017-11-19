@@ -43,6 +43,7 @@ public class Checker implements CheckerInterface {
                         timeModifier--;
                     }
                 }
+                previousLength = queue.size();
             } catch (InterruptedException e) {
                 CheckerInterface.threadMessage("Ending execution by interrupt");
                 return;
