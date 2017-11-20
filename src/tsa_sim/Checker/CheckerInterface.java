@@ -21,8 +21,4 @@ public interface CheckerInterface extends Runnable {
             person.setCompletedAt(new Date());
         }
     }
-
-    static void threadMessage(String message) {
-        System.out.format("%s: %s%n", currentThread().getName(), message);
-    }
 }

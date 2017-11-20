@@ -1,0 +1,14 @@
+First thing I notice is that this should be a threaded application for ease of design.  Some research leads me to the 
+LinkedBlockingQueue which seems to have the correct design for my purposes.
+
+1 minute will be reduced to one second for the purpose of the simulation.
+
+we need a consumer on the beginning of queue c possibly? - Yes
+https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html
+
+
+Maybe if the length has increased, we increase expediteTime by one tick.
+Then maybe if queue length is decreasing we can reduce expediteTime with a floor of 0.
+
+TimeToProcess = rand(params) - expediteTime
+

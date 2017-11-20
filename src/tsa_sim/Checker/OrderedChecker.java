@@ -8,8 +8,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TreeSet;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class OrderedChecker implements CheckerInterface {
+    private final static Logger LOGGER = Logger.getLogger(OrderedChecker.class.getName());
     private final PersonQueue queue;
     private final PersonQueue[] destination;
     private TreeSet<Date> popTimes;
@@ -38,19 +41,19 @@ public class OrderedChecker implements CheckerInterface {
                 try {
                     process(queue.take());
                 } catch (InterruptedException e) {
-                    CheckerInterface.threadMessage("Ending by interrupt");
+                    LOGGER.log(Level.INFO, String.format("%s: Ending by interrupt", Thread.currentThread().getName()));
                     return;
                 }
             }
         }
 
-        CheckerInterface.threadMessage("No more times, ending execution.");
+        LOGGER.log(Level.INFO, String.format("%s: No more times, ending execution.", Thread.currentThread().getName()));
     }
 
     public void process(Person person) {
         //Set the earliest null timestamp
         CheckerInterface.stamp(person);
-        CheckerInterface.threadMessage(String.format(
+        LOGGER.log(Level.INFO, String.format(
                 "%s processed: Id: %d, Name: %s, createdAt: %s, queuedAt: %s",
                 Thread.currentThread().getName(),
                 person.getId(),

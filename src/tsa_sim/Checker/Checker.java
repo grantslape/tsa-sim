@@ -5,10 +5,14 @@ import tsa_sim.person.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static java.lang.Math.max;
 
 public class Checker implements CheckerInterface {
+    private final static Logger LOGGER = Logger.getLogger(Checker.class.getName());
     private final PersonQueue queue;
     private final PersonQueue[] destination;
     //How many ticks should the queue be expedited by.
@@ -17,6 +21,7 @@ public class Checker implements CheckerInterface {
     private int tick;
     private String name;
     private DateFormat dateFormat;
+    private FileHandler fh;
 
     public Checker(PersonQueue origin, PersonQueue[] destination, int tick, String name) {
         this.queue = origin;
@@ -24,7 +29,6 @@ public class Checker implements CheckerInterface {
         this.name = name;
         timeModifier = 0;
         previousLength = 0;
-        //tick is is seconds on front-end, milliseconds on backend
         this.tick = tick;
         dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     }
@@ -49,7 +53,7 @@ public class Checker implements CheckerInterface {
                 }
                 previousLength = queue.size();
             } catch (InterruptedException e) {
-                CheckerInterface.threadMessage("Ending execution by interrupt");
+                LOGGER.log(Level.INFO,String.format("%s: Ending by interrupt", Thread.currentThread().getName()));
                 return;
             }
         }
@@ -58,7 +62,7 @@ public class Checker implements CheckerInterface {
     public void process(Person person) {
         //Set the earliest null timestamp
         CheckerInterface.stamp(person);
-        CheckerInterface.threadMessage(String.format(
+        LOGGER.log(Level.INFO, String.format(
                 "%s processed: Id: %d, Name: %s, createdAt: %s, queuedAt: %s, finalQueuedAt: %s, completedAt: %s",
                 Thread.currentThread().getName(),
                 person.getId(),

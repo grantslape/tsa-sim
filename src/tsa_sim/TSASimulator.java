@@ -9,15 +9,18 @@ import java.util.Date;
 import java.util.Random;
 import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TSASimulator {
     private static final int PASSENGER_COUNT = 50;
     //max ticks for initial checker.  This needs to be higher than the passengerCount * tickValue.
     private static final int MAX_INITIAL_TIME = 100;
+    private static final int BASE_TICK_VALUE = 1000;
+    private final static Logger LOGGER = Logger.getLogger(TSASimulator.class.getName());
     private PersonBuilder personBuilder;
     //Length of a tick in milliseconds.
-    public static int tickValue;
-
+    private int tickValue;
     private Checker checkerA;
     private Checker checkerB;
     private Checker checkerC;
@@ -29,7 +32,8 @@ public class TSASimulator {
     private PersonQueue queueB;
     private PersonQueue queueC;
 
-    public TSASimulator(int passengerCount, int initialTime) {
+    public TSASimulator(int passengerCount, int initialTime, int tickValue) {
+        this.tickValue = tickValue;
         try {
             personBuilder = new PersonBuilder();
         } catch (FileNotFoundException e) {
@@ -46,9 +50,9 @@ public class TSASimulator {
                 new PersonQueue[] {queueA, queueB},
                 generateTimes(passengerCount, initialTime),
                 "Checker I");
-        checkerA = new Checker(queueA, new PersonQueue[] {queueC}, tickValue, "Checker A");
-        checkerB = new Checker(queueB, new PersonQueue[] {queueC}, tickValue, "Checker B");
-        checkerC = new Checker(queueC, new PersonQueue[] {completedPool}, tickValue, "Checker C");
+        checkerA = new Checker(queueA, new PersonQueue[] {queueC}, this.tickValue, "Checker A");
+        checkerB = new Checker(queueB, new PersonQueue[] {queueC}, this.tickValue, "Checker B");
+        checkerC = new Checker(queueC, new PersonQueue[] {completedPool}, this.tickValue, "Checker C");
 
         for(int i = 0; i < passengerCount; i++) {
             passengerPool.add(personBuilder.buildPerson(i+1));
@@ -73,11 +77,11 @@ public class TSASimulator {
 
     private void printPassengers() {
         for(Person person : this.passengerPool) {
-            System.out.format(
+            LOGGER.log(Level.INFO, String.format(
                     "Id: %d, Name: %s, createdAt: %s%n",
                     person.getId(),
                     person.getFullName(),
-                    person.getCreatedAt().toString());
+                    person.getCreatedAt().toString()));
         }
     }
 
@@ -88,8 +92,31 @@ public class TSASimulator {
 
     public static void main(String[] args) {
         //TODO: IF arg.length > 0 then switch on tick value.  Inject this.
-        tickValue = 1000;
-        TSASimulator simulator = new TSASimulator(PASSENGER_COUNT, MAX_INITIAL_TIME);
+        int tickValue = BASE_TICK_VALUE;
+        int maxInitTime = MAX_INITIAL_TIME;
+        int passCount = PASSENGER_COUNT;
+        if (args.length >= 3) {
+            try {
+                tickValue = Integer.parseInt(args[2]);
+            } catch (NumberFormatException e) {
+                LOGGER.log(Level.WARNING, "Cannot parse tick value, using default");
+                tickValue = BASE_TICK_VALUE;
+            }
+            try {
+                maxInitTime = Integer.parseInt(args[1]);
+            } catch (NumberFormatException e) {
+                LOGGER.log(Level.WARNING, "Cannot parse initial time value, using default");
+                maxInitTime = MAX_INITIAL_TIME;
+            }
+            try {
+                passCount = Integer.parseInt(args[0]);
+            } catch (NumberFormatException e) {
+                LOGGER.log(Level.WARNING, "Cannot parse passenger count, using default");
+                passCount = PASSENGER_COUNT;
+            }
+        }
+
+        TSASimulator simulator = new TSASimulator(passCount, maxInitTime, tickValue);
 
         simulator.printPassengers();
         Thread a = new Thread(simulator.checkerA);
@@ -135,6 +162,6 @@ public class TSASimulator {
         System.out.println("\nSTART: " + dateFormat.format(start));
         System.out.println("END: " + dateFormat.format(end));
         System.out.print("TIME ELAPSED: ");
-        System.out.print(getDateDiff(start, end, TimeUnit.SECONDS));
+        System.out.print(getDateDiff(start, end, TimeUnit.SECONDS) + " seconds");
     }
 }
