@@ -90,8 +90,55 @@ public class TSASimulator {
         return timeUnit.convert(diffInMillis,TimeUnit.MILLISECONDS);
     }
 
+    private void run() {
+
+        Thread a = new Thread(checkerA);
+        Thread b = new Thread(checkerB);
+        Thread c = new Thread(checkerC);
+        Thread d = new Thread(initialChecker);
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
+        Date start = new Date();
+        d.start();
+        a.start();
+        b.start();
+        c.start();
+
+        //Wait for initial checker to end
+        while (d.isAlive()) {
+            try {
+                d.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                //try and recover
+                System.out.println("Restarting: " + d.getName());
+                d.start();
+            }
+        }
+        while ( a.isAlive() || b.isAlive()) {
+            if(a.isAlive() && queueA.isEmpty()) {
+                a.interrupt();
+            }
+            if(b.isAlive() && queueB.isEmpty()) {
+                b.interrupt();
+            }
+        }
+        while (c.isAlive()) {
+            if (queueC.isEmpty()) {
+                c.interrupt();
+            }
+        }
+
+        Date end = new Date();
+        System.out.println("\n*** TSA SIMULATOR ***");
+        System.out.println("Execution completed!");
+        System.out.println("\nSTART: " + dateFormat.format(start));
+        System.out.println("END: " + dateFormat.format(end));
+        System.out.print("TIME ELAPSED: ");
+        System.out.print(getDateDiff(start, end, TimeUnit.SECONDS) + " seconds");
+    }
+
     public static void main(String[] args) {
-        //TODO: IF arg.length > 0 then switch on tick value.  Inject this.
         int tickValue = BASE_TICK_VALUE;
         int maxInitTime = MAX_INITIAL_TIME;
         int passCount = PASSENGER_COUNT;
@@ -118,50 +165,6 @@ public class TSASimulator {
 
         TSASimulator simulator = new TSASimulator(passCount, maxInitTime, tickValue);
 
-        simulator.printPassengers();
-        Thread a = new Thread(simulator.checkerA);
-        Thread b = new Thread(simulator.checkerB);
-        Thread c = new Thread(simulator.checkerC);
-        Thread d = new Thread(simulator.initialChecker);
-
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
-        Date start = new Date();
-        d.start();
-        a.start();
-        b.start();
-        c.start();
-
-        //Wait for initial checker to end
-        while (d.isAlive()) {
-            try {
-                d.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                //try and recover
-                System.out.println("Restarting: " + d.getName());
-                d.start();
-            }
-        }
-        while ( a.isAlive() || b.isAlive()) {
-            if(a.isAlive() && simulator.queueA.isEmpty()) {
-                a.interrupt();
-            }
-            if(b.isAlive() && simulator.queueB.isEmpty()) {
-                b.interrupt();
-            }
-        }
-        while (c.isAlive()) {
-            if (simulator.queueC.isEmpty()) {
-                c.interrupt();
-            }
-        }
-
-        Date end = new Date();
-        System.out.println("\n*** TSA SIMULATOR ***");
-        System.out.println("Execution completed!");
-        System.out.println("\nSTART: " + dateFormat.format(start));
-        System.out.println("END: " + dateFormat.format(end));
-        System.out.print("TIME ELAPSED: ");
-        System.out.print(getDateDiff(start, end, TimeUnit.SECONDS) + " seconds");
+        simulator.run();
     }
 }
