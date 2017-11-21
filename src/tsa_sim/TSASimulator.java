@@ -12,9 +12,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+//This could implement Runnable, but not necessary.
 public class TSASimulator {
     private static final int PASSENGER_COUNT = 50;
-    //max ticks for initial checker.  This needs to be higher than the passengerCount * tickValue.
     private static final int MAX_INITIAL_TIME = 100;
     private static final int BASE_TICK_VALUE = 1000;
     private final static Logger LOGGER = Logger.getLogger(TSASimulator.class.getName());
@@ -25,21 +25,15 @@ public class TSASimulator {
     private Checker checkerB;
     private Checker checkerC;
     private OrderedChecker initialChecker;
-    //TODO: Maybe this should be a priority queue and we assign a pop time at creation?
     private PersonQueue passengerPool;
     private PersonQueue completedPool;
     private PersonQueue queueA;
     private PersonQueue queueB;
     private PersonQueue queueC;
 
-    public TSASimulator(int passengerCount, int initialTime, int tickValue) {
+    public TSASimulator(int passengerCount, int initialTime, int tickValue) throws FileNotFoundException {
         this.tickValue = tickValue;
-        try {
-            personBuilder = new PersonBuilder();
-        } catch (FileNotFoundException e) {
-            //TODO: log
-            e.printStackTrace();
-        }
+        personBuilder = new PersonBuilder();
         queueA = new PersonQueue();
         queueB = new PersonQueue();
         queueC = new PersonQueue();
@@ -59,22 +53,6 @@ public class TSASimulator {
         }
     }
 
-    public TreeSet<Date> generateTimes(int count, int length) {
-        TreeSet<Date> times = new TreeSet<>();
-        //5 second buffer for sim to begin
-        long floor = System.currentTimeMillis();
-        while(times.size() < count) {
-            times.add(generateTime(new Date(floor), new Date(floor + tickValue * length)));
-        }
-
-        return times;
-    }
-
-    private static Date generateTime(Date floor, Date ceiling) {
-        Random generator = new Random();
-        return new Date(generator.nextInt((int)(ceiling.getTime() - floor.getTime())) + floor.getTime());
-    }
-
     private void printPassengers() {
         for(Person person : this.passengerPool) {
             LOGGER.log(Level.INFO, String.format(
@@ -83,11 +61,6 @@ public class TSASimulator {
                     person.getFullName(),
                     person.getCreatedAt().toString()));
         }
-    }
-
-    private static long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
-        long diffInMillis = date2.getTime() - date1.getTime();
-        return timeUnit.convert(diffInMillis,TimeUnit.MILLISECONDS);
     }
 
     private void run() {
@@ -138,6 +111,27 @@ public class TSASimulator {
         System.out.print(getDateDiff(start, end, TimeUnit.SECONDS) + " seconds");
     }
 
+    private TreeSet<Date> generateTimes(int count, int length) {
+        TreeSet<Date> times = new TreeSet<>();
+        //5 second buffer for sim to begin
+        long floor = System.currentTimeMillis();
+        while(times.size() < count) {
+            times.add(generateTime(new Date(floor), new Date(floor + tickValue * length)));
+        }
+
+        return times;
+    }
+
+    private static long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
+        long diffInMillis = date2.getTime() - date1.getTime();
+        return timeUnit.convert(diffInMillis,TimeUnit.MILLISECONDS);
+    }
+
+    private static Date generateTime(Date floor, Date ceiling) {
+        Random generator = new Random();
+        return new Date(generator.nextInt((int)(ceiling.getTime() - floor.getTime())) + floor.getTime());
+    }
+
     public static void main(String[] args) {
         int tickValue = BASE_TICK_VALUE;
         int maxInitTime = MAX_INITIAL_TIME;
@@ -163,8 +157,12 @@ public class TSASimulator {
             }
         }
 
-        TSASimulator simulator = new TSASimulator(passCount, maxInitTime, tickValue);
-
-        simulator.run();
+        TSASimulator simulator = null;
+        try {
+            simulator = new TSASimulator(passCount, maxInitTime, tickValue);
+            simulator.run();
+        } catch (FileNotFoundException e) {
+            LOGGER.log(Level.SEVERE, "Missing name file: ", e);
+        }
     }
 }
