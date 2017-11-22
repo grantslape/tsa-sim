@@ -53,7 +53,7 @@ public class Checker implements CheckerInterface {
                 }
                 previousLength = queue.size();
             } catch (InterruptedException e) {
-                LOGGER.log(Level.INFO,String.format("%s: Ending by interrupt", Thread.currentThread().getName()));
+                LOGGER.log(Level.INFO, String.format("%s: Ending by interrupt", Thread.currentThread().getName()));
                 return;
             }
         }
@@ -62,8 +62,9 @@ public class Checker implements CheckerInterface {
     public void process(Person person) {
         //Set the earliest null timestamp
         CheckerInterface.stamp(person);
+        //TODO: align these logs, format the name or something
         LOGGER.log(Level.INFO, String.format(
-                "%s processed: Id: %d, Name: %s, createdAt: %s, queuedAt: %s, finalQueuedAt: %s, completedAt: %s",
+                "%s processed: Id: %7d, Name: %25s, createdAt: %s, queuedAt: %s, finalQueuedAt: %s, completedAt: %s",
                 Thread.currentThread().getName(),
                 person.getId(),
                 person.getFullName(),

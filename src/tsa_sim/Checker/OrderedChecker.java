@@ -53,8 +53,9 @@ public class OrderedChecker implements CheckerInterface {
     public void process(Person person) {
         //Set the earliest null timestamp
         CheckerInterface.stamp(person);
+        //TODO: align these logs, format the name or something
         LOGGER.log(Level.INFO, String.format(
-                "%s processed: Id: %d, Name: %s, createdAt: %s, queuedAt: %s",
+                "%s processed: Id: %7d, Name: %25s, createdAt: %s, queuedAt: %s",
                 Thread.currentThread().getName(),
                 person.getId(),
                 person.getFullName(),

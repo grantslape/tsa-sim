@@ -107,13 +107,14 @@ public class TSASimulator {
         System.out.println("Execution completed!");
         System.out.println("\nSTART: " + dateFormat.format(start));
         System.out.println("END: " + dateFormat.format(end));
+        //TODO: Add time elapsed in ticks
         System.out.print("TIME ELAPSED: ");
         System.out.print(getDateDiff(start, end, TimeUnit.SECONDS) + " seconds");
     }
 
     private TreeSet<Date> generateTimes(int count, int length) {
+        //TODO: throw error if there are not count milliseconds in range.
         TreeSet<Date> times = new TreeSet<>();
-        //5 second buffer for sim to begin
         long floor = System.currentTimeMillis();
         while(times.size() < count) {
             times.add(generateTime(new Date(floor), new Date(floor + tickValue * length)));

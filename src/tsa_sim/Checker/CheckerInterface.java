@@ -12,6 +12,7 @@ public interface CheckerInterface extends Runnable {
 
     void process(Person person);
 
+    //TODO: Perform this in observer
     static void stamp(Person person) {
         if (person.getQueuedAt() == null) {
             person.setQueuedAt(new Date());

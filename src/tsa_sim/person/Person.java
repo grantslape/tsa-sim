@@ -8,6 +8,7 @@ public class Person {
     private final String lastName;
     private final Date createdAt;
     //TODO: These should not be in this class for portability, an event listener should really record this.
+    //Extend person.
     //First Queue entered (A or B)
     private Date queuedAt = null;
     //Second Queue entered
