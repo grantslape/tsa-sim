@@ -158,9 +158,8 @@ public class TSASimulator {
             }
         }
 
-        TSASimulator simulator = null;
         try {
-            simulator = new TSASimulator(passCount, maxInitTime, tickValue);
+            TSASimulator simulator = new TSASimulator(passCount, maxInitTime, tickValue);
             simulator.run();
         } catch (FileNotFoundException e) {
             LOGGER.log(Level.SEVERE, "Missing name file: ", e);
