@@ -1,5 +1,8 @@
 package tsa_sim.Checker;
 
+import java.util.Observable;
+
+import tsa_sim.TSAObserver;
 import tsa_sim.person.*;
 
 import java.text.DateFormat;
@@ -32,6 +35,13 @@ public class Checker implements CheckerInterface {
         this.tick = tick;
         dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     }
+
+    @Override
+    public void notifyObservers(Object person) {
+        //TODO
+    }
+
+    
 
     public void run() {
         Thread.currentThread().setName(name);
