@@ -41,7 +41,7 @@ public class Checker implements CheckerInterface {
         //TODO
     }
 
-    
+
 
     public void run() {
         Thread.currentThread().setName(name);
