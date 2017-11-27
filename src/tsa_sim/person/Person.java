@@ -61,7 +61,6 @@ public class Person {
     /*
      * SETTERS
      */
-
     public void setCompletedAt(Date completedAt) {
         this.completedAt = completedAt;
     }
