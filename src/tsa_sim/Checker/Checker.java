@@ -71,7 +71,8 @@ public class Checker implements CheckerInterface {
                 dateFormat.format(person.getCreatedAt()),
                 person.getQueuedAt() == null ? null : dateFormat.format(person.getQueuedAt()),
                 person.getFinalQueuedAt() == null ? null : dateFormat.format(person.getFinalQueuedAt()),
-                person.getCompletedAt() == null ? null : dateFormat.format(person.getCompletedAt())));
+                person.getCompletedAt() == null ? null : dateFormat.format(person.getCompletedAt())
+                ));
         if (destination.length > 1) {
             destination[ThreadLocalRandom.current().nextInt(destination.length)].add(person);
         } else {

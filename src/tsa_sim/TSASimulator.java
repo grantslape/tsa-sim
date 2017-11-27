@@ -43,7 +43,8 @@ public class TSASimulator {
                 passengerPool,
                 new PersonQueue[] {queueA, queueB},
                 generateTimes(passengerCount, initialTime),
-                "Checker I");
+                "Checker I"
+        );
         checkerA = new Checker(queueA, new PersonQueue[] {queueC}, this.tickValue, "Checker A");
         checkerB = new Checker(queueB, new PersonQueue[] {queueC}, this.tickValue, "Checker B");
         checkerC = new Checker(queueC, new PersonQueue[] {completedPool}, this.tickValue, "Checker C");

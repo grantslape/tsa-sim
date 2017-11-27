@@ -60,7 +60,8 @@ public class OrderedChecker implements CheckerInterface {
                 person.getId(),
                 person.getFullName(),
                 dateFormat.format(person.getCreatedAt()),
-                person.getQueuedAt() == null ? null : dateFormat.format(person.getQueuedAt())));
+                person.getQueuedAt() == null ? null : dateFormat.format(person.getQueuedAt())
+        ));
         if (destination.length > 1) {
             destination[ThreadLocalRandom.current().nextInt(destination.length)].add(person);
         } else {

@@ -40,7 +40,8 @@ public class PersonBuilder {
                 id,
                 new Date(),
                 firstNames.get(generator.nextInt(firstNames.size())),
-                lastNames.get(generator.nextInt(lastNames.size())));
+                lastNames.get(generator.nextInt(lastNames.size()))
+        );
     }
 
 }

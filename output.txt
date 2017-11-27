@@ -1,0 +1,315 @@
+Nov 26, 2017 6:00:19 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:       1, Name:             CHIN LEHMKUHL, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:19.767
+Nov 26, 2017 6:00:21 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:       1, Name:             CHIN LEHMKUHL, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:19.767, finalQueuedAt: 2017-11-26 18:00:21.848, completedAt: null
+Nov 26, 2017 6:00:22 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:       2, Name:           TYRONE MESZAROS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:22.630
+Nov 26, 2017 6:00:23 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:       1, Name:             CHIN LEHMKUHL, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:19.767, finalQueuedAt: 2017-11-26 18:00:21.848, completedAt: 2017-11-26 18:00:23.852
+Nov 26, 2017 6:00:29 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:       3, Name:               BUD DUKETTE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:29.393
+Nov 26, 2017 6:00:30 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:       4, Name:            KELSEY CANTRES, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:30.700
+Nov 26, 2017 6:00:30 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:       2, Name:           TYRONE MESZAROS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:22.630, finalQueuedAt: 2017-11-26 18:00:30.853, completedAt: null
+Nov 26, 2017 6:00:31 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:       5, Name:             HARVEY OTTING, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:31.236
+Nov 26, 2017 6:00:31 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:       2, Name:           TYRONE MESZAROS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:22.630, finalQueuedAt: 2017-11-26 18:00:30.853, completedAt: 2017-11-26 18:00:31.874
+Nov 26, 2017 6:00:32 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:       6, Name:            PATRICIA ESSEN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:32.007
+Nov 26, 2017 6:00:33 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:       7, Name:          TRAVIS MANCILLAS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:33.259
+Nov 26, 2017 6:00:34 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:       8, Name:             WESLEY ROSMAN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:34.896
+Nov 26, 2017 6:00:39 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:       9, Name:                MIKE MOTTE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:39.773
+Nov 26, 2017 6:00:40 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      10, Name:             FABIAN MORAIN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:40.336
+Nov 26, 2017 6:00:40 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      11, Name:                HENRY GAAL, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:40.766
+Nov 26, 2017 6:00:40 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:       3, Name:               BUD DUKETTE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:29.393, finalQueuedAt: 2017-11-26 18:00:40.883, completedAt: null
+Nov 26, 2017 6:00:44 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      12, Name:              TELMA PUERTA, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:44.362
+Nov 26, 2017 6:00:44 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:       5, Name:             HARVEY OTTING, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:31.236, finalQueuedAt: 2017-11-26 18:00:44.862, completedAt: null
+Nov 26, 2017 6:00:44 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      13, Name:             NYLA EBERLEIN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:44.893
+Nov 26, 2017 6:00:45 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      14, Name:              OPAL CELEDON, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:45.324
+Nov 26, 2017 6:00:46 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      15, Name:       MARIBETH CIRIGLIANO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:46.809
+Nov 26, 2017 6:00:47 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:       3, Name:               BUD DUKETTE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:29.393, finalQueuedAt: 2017-11-26 18:00:40.883, completedAt: 2017-11-26 18:00:47.903
+Nov 26, 2017 6:00:48 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      16, Name:              CORINE HOESE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:48.332
+Nov 26, 2017 6:00:48 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:       4, Name:            KELSEY CANTRES, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:30.700, finalQueuedAt: 2017-11-26 18:00:48.887, completedAt: null
+Nov 26, 2017 6:00:49 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      17, Name:              ELEASE PANZA, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:49.877
+Nov 26, 2017 6:00:49 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:       6, Name:            PATRICIA ESSEN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:32.007, finalQueuedAt: 2017-11-26 18:00:49.891, completedAt: null
+Nov 26, 2017 6:00:50 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:       7, Name:          TRAVIS MANCILLAS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:33.259, finalQueuedAt: 2017-11-26 18:00:50.896, completedAt: null
+Nov 26, 2017 6:00:52 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      10, Name:             FABIAN MORAIN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:40.336, finalQueuedAt: 2017-11-26 18:00:52.868, completedAt: null
+Nov 26, 2017 6:00:53 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      12, Name:              TELMA PUERTA, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:44.362, finalQueuedAt: 2017-11-26 18:00:53.873, completedAt: null
+Nov 26, 2017 6:00:57 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      17, Name:              ELEASE PANZA, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:49.877, finalQueuedAt: 2017-11-26 18:00:57.879, completedAt: null
+Nov 26, 2017 6:00:58 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      18, Name:          LAKEESHA MCTIGHE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:58.055
+Nov 26, 2017 6:00:58 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:       5, Name:             HARVEY OTTING, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:31.236, finalQueuedAt: 2017-11-26 18:00:44.862, completedAt: 2017-11-26 18:00:58.909
+Nov 26, 2017 6:01:02 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      19, Name:        CHRYSTAL CASTENEDA, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:02.024
+Nov 26, 2017 6:01:02 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      20, Name:               KEILA BRIMM, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:02.069
+Nov 26, 2017 6:01:04 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:       8, Name:             WESLEY ROSMAN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:34.896, finalQueuedAt: 2017-11-26 18:01:04.901, completedAt: null
+Nov 26, 2017 6:01:05 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      21, Name:          ELODIA FUSCHETTO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:05.516
+Nov 26, 2017 6:01:05 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      22, Name:             DARIO PERRINO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:05.949
+Nov 26, 2017 6:01:06 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      23, Name:             MARLA SELLICK, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:06.562
+Nov 26, 2017 6:01:06 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      24, Name:               GARTH DEMUS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:06.589
+Nov 26, 2017 6:01:07 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      25, Name:           SALLY SEABREEZE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:07.028
+Nov 26, 2017 6:01:07 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      26, Name:              MARC MAESTRE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:07.396
+Nov 26, 2017 6:01:07 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:       4, Name:            KELSEY CANTRES, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:30.700, finalQueuedAt: 2017-11-26 18:00:48.887, completedAt: 2017-11-26 18:01:07.913
+Nov 26, 2017 6:01:08 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      19, Name:        CHRYSTAL CASTENEDA, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:02.024, finalQueuedAt: 2017-11-26 18:01:08.902, completedAt: null
+Nov 26, 2017 6:01:11 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      27, Name:           ADELAIDA NEVILL, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:11.084
+Nov 26, 2017 6:01:14 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      28, Name:               OREN MARZAN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:14.657
+Nov 26, 2017 6:01:15 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:       6, Name:            PATRICIA ESSEN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:32.007, finalQueuedAt: 2017-11-26 18:00:49.891, completedAt: 2017-11-26 18:01:15.914
+Nov 26, 2017 6:01:16 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:       9, Name:                MIKE MOTTE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:39.773, finalQueuedAt: 2017-11-26 18:01:16.905, completedAt: null
+Nov 26, 2017 6:01:16 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:       7, Name:          TRAVIS MANCILLAS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:33.259, finalQueuedAt: 2017-11-26 18:00:50.896, completedAt: 2017-11-26 18:01:16.915
+Nov 26, 2017 6:01:17 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      11, Name:                HENRY GAAL, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:40.766, finalQueuedAt: 2017-11-26 18:01:17.906, completedAt: null
+Nov 26, 2017 6:01:18 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      13, Name:             NYLA EBERLEIN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:44.893, finalQueuedAt: 2017-11-26 18:01:18.909, completedAt: null
+Nov 26, 2017 6:01:19 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      29, Name:             ALBERTO GENCO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:19.419
+Nov 26, 2017 6:01:19 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      30, Name:         MARAGRET MCLESTER, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:19.565
+Nov 26, 2017 6:01:20 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      31, Name:             IRINA SIDERIS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:20.414
+Nov 26, 2017 6:01:21 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      23, Name:             MARLA SELLICK, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:06.562, finalQueuedAt: 2017-11-26 18:01:21.907, completedAt: null
+Nov 26, 2017 6:01:22 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      32, Name:             TRUMAN MATOTT, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:22.300
+Nov 26, 2017 6:01:23 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      25, Name:           SALLY SEABREEZE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:07.028, finalQueuedAt: 2017-11-26 18:01:23.912, completedAt: null
+Nov 26, 2017 6:01:24 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      33, Name:          CHELSEA BRERETON, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:24.572
+Nov 26, 2017 6:01:26 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      34, Name:              DENITA LANZO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:26.973
+Nov 26, 2017 6:01:27 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      10, Name:             FABIAN MORAIN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:40.336, finalQueuedAt: 2017-11-26 18:00:52.868, completedAt: 2017-11-26 18:01:27.919
+Nov 26, 2017 6:01:28 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      35, Name:             TARSHA CANETE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:28.128
+Nov 26, 2017 6:01:29 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      36, Name:          KARIMA COUILLARD, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:29.944
+Nov 26, 2017 6:01:31 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      37, Name:            TRESSA CHERIAN, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:31.245
+Nov 26, 2017 6:01:32 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      14, Name:              OPAL CELEDON, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:45.324, finalQueuedAt: 2017-11-26 18:01:32.914, completedAt: null
+Nov 26, 2017 6:01:32 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      12, Name:              TELMA PUERTA, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:44.362, finalQueuedAt: 2017-11-26 18:00:53.873, completedAt: 2017-11-26 18:01:32.920
+Nov 26, 2017 6:01:34 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      38, Name:           BRITTANEY BUROW, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:34.111
+Nov 26, 2017 6:01:34 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      27, Name:           ADELAIDA NEVILL, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:11.084, finalQueuedAt: 2017-11-26 18:01:34.914, completedAt: null
+Nov 26, 2017 6:01:35 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      39, Name:             DESIREE YURKO, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:35.570
+Nov 26, 2017 6:01:36 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      40, Name:             CHRISTAL PERE, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:36.109
+Nov 26, 2017 6:01:37 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      41, Name:           RICARDA ARREAGA, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:37.458
+Nov 26, 2017 6:01:37 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      28, Name:               OREN MARZAN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:14.657, finalQueuedAt: 2017-11-26 18:01:37.919, completedAt: null
+Nov 26, 2017 6:01:38 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      17, Name:              ELEASE PANZA, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:49.877, finalQueuedAt: 2017-11-26 18:00:57.879, completedAt: 2017-11-26 18:01:38.924
+Nov 26, 2017 6:01:39 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:       8, Name:             WESLEY ROSMAN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:34.896, finalQueuedAt: 2017-11-26 18:01:04.901, completedAt: 2017-11-26 18:01:39.929
+Nov 26, 2017 6:01:42 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      15, Name:       MARIBETH CIRIGLIANO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:46.809, finalQueuedAt: 2017-11-26 18:01:42.920, completedAt: null
+Nov 26, 2017 6:01:43 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      42, Name:            JEANINE HAMRIC, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:43.011
+Nov 26, 2017 6:01:43 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      43, Name:                  SUN EMMA, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:43.211
+Nov 26, 2017 6:01:44 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      44, Name:         STEFANIE GRUBAUGH, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:44.503
+Nov 26, 2017 6:01:44 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      19, Name:        CHRYSTAL CASTENEDA, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:02.024, finalQueuedAt: 2017-11-26 18:01:08.902, completedAt: 2017-11-26 18:01:44.931
+Nov 26, 2017 6:01:45 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      45, Name:             ADALINE LOWES, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:45.379
+Nov 26, 2017 6:01:46 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      31, Name:             IRINA SIDERIS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:20.414, finalQueuedAt: 2017-11-26 18:01:46.924, completedAt: null
+Nov 26, 2017 6:01:47 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      33, Name:          CHELSEA BRERETON, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:24.572, finalQueuedAt: 2017-11-26 18:01:47.929, completedAt: null
+Nov 26, 2017 6:01:47 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:       9, Name:                MIKE MOTTE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:39.773, finalQueuedAt: 2017-11-26 18:01:16.905, completedAt: 2017-11-26 18:01:47.934
+Nov 26, 2017 6:01:48 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      36, Name:          KARIMA COUILLARD, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:29.944, finalQueuedAt: 2017-11-26 18:01:48.929, completedAt: null
+Nov 26, 2017 6:01:49 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      46, Name:             ELLI SCHEBLER, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:49.340
+Nov 26, 2017 6:01:50 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      47, Name:             JACK COLLIVER, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:50.414
+Nov 26, 2017 6:01:51 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      16, Name:              CORINE HOESE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:48.332, finalQueuedAt: 2017-11-26 18:01:51.923, completedAt: null
+Nov 26, 2017 6:01:52 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      48, Name:             JONELLE DAMAS, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:52.324
+Nov 26, 2017 6:01:52 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      37, Name:            TRESSA CHERIAN, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:31.245, finalQueuedAt: 2017-11-26 18:01:52.933, completedAt: null
+Nov 26, 2017 6:01:56 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      49, Name:               CYRUS OKANO, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:56.785
+Nov 26, 2017 6:01:57 PM tsa_sim.Checker.OrderedChecker process
+INFO: Checker I processed: Id:      50, Name:          SHAY LILJENQUIST, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:57.536
+Nov 26, 2017 6:01:57 PM tsa_sim.Checker.OrderedChecker run
+INFO: Checker I: No more times, ending execution.
+Nov 26, 2017 6:01:57 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      11, Name:                HENRY GAAL, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:40.766, finalQueuedAt: 2017-11-26 18:01:17.906, completedAt: 2017-11-26 18:01:57.938
+Nov 26, 2017 6:01:58 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      13, Name:             NYLA EBERLEIN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:44.893, finalQueuedAt: 2017-11-26 18:01:18.909, completedAt: 2017-11-26 18:01:58.940
+Nov 26, 2017 6:01:59 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      18, Name:          LAKEESHA MCTIGHE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:58.055, finalQueuedAt: 2017-11-26 18:01:59.929, completedAt: null
+Nov 26, 2017 6:01:59 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      38, Name:           BRITTANEY BUROW, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:34.111, finalQueuedAt: 2017-11-26 18:01:59.939, completedAt: null
+Nov 26, 2017 6:02:00 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      41, Name:           RICARDA ARREAGA, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:37.458, finalQueuedAt: 2017-11-26 18:02:00.944, completedAt: null
+Nov 26, 2017 6:02:01 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      23, Name:             MARLA SELLICK, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:06.562, finalQueuedAt: 2017-11-26 18:01:21.907, completedAt: 2017-11-26 18:02:01.944
+Nov 26, 2017 6:02:02 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      25, Name:           SALLY SEABREEZE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:07.028, finalQueuedAt: 2017-11-26 18:01:23.912, completedAt: 2017-11-26 18:02:02.949
+Nov 26, 2017 6:02:03 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      14, Name:              OPAL CELEDON, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:45.324, finalQueuedAt: 2017-11-26 18:01:32.914, completedAt: 2017-11-26 18:02:03.950
+Nov 26, 2017 6:02:07 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      42, Name:            JEANINE HAMRIC, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:43.011, finalQueuedAt: 2017-11-26 18:02:07.950, completedAt: null
+Nov 26, 2017 6:02:08 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      27, Name:           ADELAIDA NEVILL, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:11.084, finalQueuedAt: 2017-11-26 18:01:34.914, completedAt: 2017-11-26 18:02:08.954
+Nov 26, 2017 6:02:09 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      20, Name:               KEILA BRIMM, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:02.069, finalQueuedAt: 2017-11-26 18:02:09.931, completedAt: null
+Nov 26, 2017 6:02:10 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      21, Name:          ELODIA FUSCHETTO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:05.516, finalQueuedAt: 2017-11-26 18:02:10.934, completedAt: null
+Nov 26, 2017 6:02:16 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      22, Name:             DARIO PERRINO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:05.949, finalQueuedAt: 2017-11-26 18:02:16.936, completedAt: null
+Nov 26, 2017 6:02:18 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      43, Name:                  SUN EMMA, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:43.211, finalQueuedAt: 2017-11-26 18:02:18.954, completedAt: null
+Nov 26, 2017 6:02:19 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      28, Name:               OREN MARZAN, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:14.657, finalQueuedAt: 2017-11-26 18:01:37.919, completedAt: 2017-11-26 18:02:19.959
+Nov 26, 2017 6:02:20 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      24, Name:               GARTH DEMUS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:06.589, finalQueuedAt: 2017-11-26 18:02:20.940, completedAt: null
+Nov 26, 2017 6:02:20 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      15, Name:       MARIBETH CIRIGLIANO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:46.809, finalQueuedAt: 2017-11-26 18:01:42.920, completedAt: 2017-11-26 18:02:20.964
+Nov 26, 2017 6:02:23 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      31, Name:             IRINA SIDERIS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:20.414, finalQueuedAt: 2017-11-26 18:01:46.924, completedAt: 2017-11-26 18:02:23.969
+Nov 26, 2017 6:02:30 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      33, Name:          CHELSEA BRERETON, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:24.572, finalQueuedAt: 2017-11-26 18:01:47.929, completedAt: 2017-11-26 18:02:30.973
+Nov 26, 2017 6:02:33 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      26, Name:              MARC MAESTRE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:07.396, finalQueuedAt: 2017-11-26 18:02:33.945, completedAt: null
+Nov 26, 2017 6:02:33 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      44, Name:         STEFANIE GRUBAUGH, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:44.503, finalQueuedAt: 2017-11-26 18:02:33.959, completedAt: null
+Nov 26, 2017 6:02:36 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      36, Name:          KARIMA COUILLARD, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:29.944, finalQueuedAt: 2017-11-26 18:01:48.929, completedAt: 2017-11-26 18:02:36.977
+Nov 26, 2017 6:02:37 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      29, Name:             ALBERTO GENCO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:19.419, finalQueuedAt: 2017-11-26 18:02:37.950, completedAt: null
+Nov 26, 2017 6:02:43 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      16, Name:              CORINE HOESE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:48.332, finalQueuedAt: 2017-11-26 18:01:51.923, completedAt: 2017-11-26 18:02:43.981
+Nov 26, 2017 6:02:47 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      45, Name:             ADALINE LOWES, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:45.379, finalQueuedAt: 2017-11-26 18:02:47.965, completedAt: null
+Nov 26, 2017 6:02:51 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      30, Name:         MARAGRET MCLESTER, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:19.565, finalQueuedAt: 2017-11-26 18:02:51.953, completedAt: null
+Nov 26, 2017 6:02:53 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      37, Name:            TRESSA CHERIAN, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:31.245, finalQueuedAt: 2017-11-26 18:01:52.933, completedAt: 2017-11-26 18:02:53.984
+Nov 26, 2017 6:02:54 PM tsa_sim.Checker.Checker process
+INFO: Checker A processed: Id:      48, Name:             JONELLE DAMAS, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:52.324, finalQueuedAt: 2017-11-26 18:02:54.969, completedAt: null
+Nov 26, 2017 6:02:54 PM tsa_sim.Checker.Checker run
+INFO: Checker A: Ending by interrupt
+Nov 26, 2017 6:02:54 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      18, Name:          LAKEESHA MCTIGHE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:00:58.055, finalQueuedAt: 2017-11-26 18:01:59.929, completedAt: 2017-11-26 18:02:54.990
+Nov 26, 2017 6:02:57 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      32, Name:             TRUMAN MATOTT, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:22.300, finalQueuedAt: 2017-11-26 18:02:57.955, completedAt: null
+Nov 26, 2017 6:03:03 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      38, Name:           BRITTANEY BUROW, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:34.111, finalQueuedAt: 2017-11-26 18:01:59.939, completedAt: 2017-11-26 18:03:03.992
+Nov 26, 2017 6:03:05 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      34, Name:              DENITA LANZO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:26.973, finalQueuedAt: 2017-11-26 18:03:05.956, completedAt: null
+Nov 26, 2017 6:03:07 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      41, Name:           RICARDA ARREAGA, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:37.458, finalQueuedAt: 2017-11-26 18:02:00.944, completedAt: 2017-11-26 18:03:07.996
+Nov 26, 2017 6:03:08 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      42, Name:            JEANINE HAMRIC, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:43.011, finalQueuedAt: 2017-11-26 18:02:07.950, completedAt: 2017-11-26 18:03:08.999
+Nov 26, 2017 6:03:13 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      20, Name:               KEILA BRIMM, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:02.069, finalQueuedAt: 2017-11-26 18:02:09.931, completedAt: 2017-11-26 18:03:13.002
+Nov 26, 2017 6:03:16 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      21, Name:          ELODIA FUSCHETTO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:05.516, finalQueuedAt: 2017-11-26 18:02:10.934, completedAt: 2017-11-26 18:03:16.008
+Nov 26, 2017 6:03:18 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      35, Name:             TARSHA CANETE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:28.128, finalQueuedAt: 2017-11-26 18:03:18.958, completedAt: null
+Nov 26, 2017 6:03:23 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      39, Name:             DESIREE YURKO, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:35.570, finalQueuedAt: 2017-11-26 18:03:23.963, completedAt: null
+Nov 26, 2017 6:03:29 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      22, Name:             DARIO PERRINO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:05.949, finalQueuedAt: 2017-11-26 18:02:16.936, completedAt: 2017-11-26 18:03:29.013
+Nov 26, 2017 6:03:32 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      43, Name:                  SUN EMMA, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:43.211, finalQueuedAt: 2017-11-26 18:02:18.954, completedAt: 2017-11-26 18:03:32.018
+Nov 26, 2017 6:03:32 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      40, Name:             CHRISTAL PERE, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:36.109, finalQueuedAt: 2017-11-26 18:03:32.966, completedAt: null
+Nov 26, 2017 6:03:39 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      46, Name:             ELLI SCHEBLER, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:49.340, finalQueuedAt: 2017-11-26 18:03:39.970, completedAt: null
+Nov 26, 2017 6:03:45 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      24, Name:               GARTH DEMUS, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:06.589, finalQueuedAt: 2017-11-26 18:02:20.940, completedAt: 2017-11-26 18:03:45.020
+Nov 26, 2017 6:03:45 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      47, Name:             JACK COLLIVER, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:50.414, finalQueuedAt: 2017-11-26 18:03:45.975, completedAt: null
+Nov 26, 2017 6:03:50 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      49, Name:               CYRUS OKANO, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:56.785, finalQueuedAt: 2017-11-26 18:03:50.979, completedAt: null
+Nov 26, 2017 6:03:56 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      26, Name:              MARC MAESTRE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:07.396, finalQueuedAt: 2017-11-26 18:02:33.945, completedAt: 2017-11-26 18:03:56.021
+Nov 26, 2017 6:03:58 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      44, Name:         STEFANIE GRUBAUGH, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:44.503, finalQueuedAt: 2017-11-26 18:02:33.959, completedAt: 2017-11-26 18:03:58.024
+Nov 26, 2017 6:03:59 PM tsa_sim.Checker.Checker process
+INFO: Checker B processed: Id:      50, Name:          SHAY LILJENQUIST, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:57.536, finalQueuedAt: 2017-11-26 18:03:59.985, completedAt: null
+Nov 26, 2017 6:03:59 PM tsa_sim.Checker.Checker run
+INFO: Checker B: Ending by interrupt
+Nov 26, 2017 6:04:11 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      29, Name:             ALBERTO GENCO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:19.419, finalQueuedAt: 2017-11-26 18:02:37.950, completedAt: 2017-11-26 18:04:11.030
+Nov 26, 2017 6:04:16 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      45, Name:             ADALINE LOWES, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:45.379, finalQueuedAt: 2017-11-26 18:02:47.965, completedAt: 2017-11-26 18:04:16.033
+Nov 26, 2017 6:04:28 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      30, Name:         MARAGRET MCLESTER, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:19.565, finalQueuedAt: 2017-11-26 18:02:51.953, completedAt: 2017-11-26 18:04:28.037
+Nov 26, 2017 6:04:33 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      48, Name:             JONELLE DAMAS, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:52.324, finalQueuedAt: 2017-11-26 18:02:54.969, completedAt: 2017-11-26 18:04:33.040
+Nov 26, 2017 6:04:42 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      32, Name:             TRUMAN MATOTT, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:22.300, finalQueuedAt: 2017-11-26 18:02:57.955, completedAt: 2017-11-26 18:04:42.044
+Nov 26, 2017 6:04:48 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      34, Name:              DENITA LANZO, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:26.973, finalQueuedAt: 2017-11-26 18:03:05.956, completedAt: 2017-11-26 18:04:48.050
+Nov 26, 2017 6:04:53 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      35, Name:             TARSHA CANETE, createdAt: 2017-11-26 18:00:17.840, queuedAt: 2017-11-26 18:01:28.128, finalQueuedAt: 2017-11-26 18:03:18.958, completedAt: 2017-11-26 18:04:53.055
+Nov 26, 2017 6:04:58 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      39, Name:             DESIREE YURKO, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:35.570, finalQueuedAt: 2017-11-26 18:03:23.963, completedAt: 2017-11-26 18:04:58.060
+Nov 26, 2017 6:05:00 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      40, Name:             CHRISTAL PERE, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:36.109, finalQueuedAt: 2017-11-26 18:03:32.966, completedAt: 2017-11-26 18:05:00.063
+Nov 26, 2017 6:05:05 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      46, Name:             ELLI SCHEBLER, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:49.340, finalQueuedAt: 2017-11-26 18:03:39.970, completedAt: 2017-11-26 18:05:05.069
+Nov 26, 2017 6:05:10 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      47, Name:             JACK COLLIVER, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:50.414, finalQueuedAt: 2017-11-26 18:03:45.975, completedAt: 2017-11-26 18:05:10.071
+Nov 26, 2017 6:05:19 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      49, Name:               CYRUS OKANO, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:56.785, finalQueuedAt: 2017-11-26 18:03:50.979, completedAt: 2017-11-26 18:05:19.077
+Nov 26, 2017 6:05:27 PM tsa_sim.Checker.Checker process
+INFO: Checker C processed: Id:      50, Name:          SHAY LILJENQUIST, createdAt: 2017-11-26 18:00:17.841, queuedAt: 2017-11-26 18:01:57.536, finalQueuedAt: 2017-11-26 18:03:59.985, completedAt: 2017-11-26 18:05:27.119
+Nov 26, 2017 6:05:27 PM tsa_sim.Checker.Checker run
+INFO: Checker C: Ending by interrupt
+
+*** TSA SIMULATOR ***
+Execution completed!
+
+START: 2017/11/26 18:00:17.841
+END: 2017/11/26 18:05:27.128
+TIME ELAPSED: 309 seconds
