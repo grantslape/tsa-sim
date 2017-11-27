@@ -4,8 +4,6 @@ import tsa_sim.person.Person;
 
 import java.util.Date;
 
-import static java.lang.Thread.*;
-
 public interface CheckerInterface extends Runnable {
 
     void run();
